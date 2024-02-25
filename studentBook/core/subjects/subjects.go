@@ -44,35 +44,6 @@ func GetAllSubjects(c *gin.Context) []map[string]string {
 	return subjects
 }
 
-//func GetSubjectByName(c *gin.Context) string {
-//	OpenDataBase()
-//	defer db.Close()
-//	subjectType := c.Query("type")
-//	if subjectType == "" {
-//		c.JSON(400, gin.H{"error": "Missing 'type' parameter"})
-//		return "null"
-//	}
-//
-//	rows, err := db.Query("SELECT name FROM subjects WHERE name = ?", subjectType)
-//	if err != nil {
-//		c.JSON(500, gin.H{"error": "Internal Server Error"})
-//		return "null"
-//	}
-//	defer rows.Close()
-//
-//	var subject string
-//	for rows.Next() {
-//		var result string
-//		err := rows.Scan(&result)
-//		if err != nil {
-//			c.JSON(500, gin.H{"error": "Internal Server Error"})
-//			return ""
-//		}
-//		subject = result
-//	}
-//	return subject
-//}
-
 func CreateSubject(c *gin.Context) []map[string]string {
 	OpenDataBase()
 	defer db.Close()
